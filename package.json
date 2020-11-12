@@ -12,8 +12,11 @@
   "devDependencies": {
     "@types/express": "^4.17.9",
     "@types/jest": "^26.0.15",
+    "husky": "^4.3.0",
     "jest": "^26.6.3",
     "nodemon": "^2.0.6",
+    "prettier": "^2.1.2",
+    "pretty-quick": "^3.1.0",
     "ts-jest": "^26.4.4",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.5"
@@ -21,5 +24,11 @@
   "scripts": {
     "develop": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.test.ts' --exec 'ts-node' src/index.ts",
     "dev": "npm run develop"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "node_modules/.bin/pretty-quick --staged",
+      "pre-push": "node_modules/.bin/prettier -c ."
+    }
   }
 }
