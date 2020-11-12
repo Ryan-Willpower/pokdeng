@@ -1,9 +1,9 @@
-import { ICard } from "../types/deck"
+import { CardSymbol, ICard, Value } from "../types/deck"
 import random from "./random"
 
 class Deck {
-  values: string[]
-  symbols: string[]
+  values: Value[]
+  symbols: CardSymbol[]
 
   constructor() {
     this.values = [
